@@ -57,9 +57,10 @@ pipeline {
 
                    steps {
     sh '''
-        npx serve -s build -l 3000 &
-        sleep 10
-        npx playwright test --reporter=html
+       npx serve -s build -l 3000 &
+npx wait-on http://localhost:3000
+npx playwright test --reporter=html
+
     '''
 }
 
@@ -84,9 +85,10 @@ pipeline {
             }
             steps {
                 sh '''
-                    npm install -g netlify-cli
-                    netlify --version
-                    echo "Deploying to Netlify. Site ID: $NETLIFY_SITE_ID"
+                    npx netlify --version
+echo "Deploying to Netlify. Site ID: $NETLIFY_SITE_ID"
+npx netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod
+
                 '''
             }
         }
