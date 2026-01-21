@@ -6,10 +6,6 @@ pipeline {
         NETLIFY_SITE_ID = 'c4b795b5-fee6-41d1-a8aa-2e53a066c896'
 
     }
-    environment {
-        NETLIFY_SITE_ID = '03d4042d-476c-4668-9ce8-34352dad73e4'
-    }
-
     stages {
 
         stage('Build') {
