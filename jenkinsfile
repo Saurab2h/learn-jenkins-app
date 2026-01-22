@@ -94,7 +94,7 @@ pipeline {
                 '''
             }
         }
-        /*
+        
         stage('prod E2E') {
                     agent {
                         docker {
@@ -103,7 +103,7 @@ pipeline {
                         }
                     }
                     environment{
-                        CI_ENVIRONMENT_URL=""
+                        CI_ENVIRONMENT_URL="https://bejewelled-caramel-2536bb.netlify.app "
                     }
 
                     steps {
@@ -118,6 +118,6 @@ pipeline {
                         }
                     }
                 }
-                */
+                
     }
 }
